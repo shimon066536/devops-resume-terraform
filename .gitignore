@@ -1,0 +1,14 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Permission files
+*.pem
+*.key
+*.crt
+.aws/
+
+# Logs
+*.log
