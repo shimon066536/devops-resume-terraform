@@ -60,6 +60,9 @@ resource "local_file" "index_html" {
   })
   filename = "${path.module}/index.html"
   file_permission = "0644"
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_s3_object" "index" {

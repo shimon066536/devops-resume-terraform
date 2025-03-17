@@ -11,11 +11,9 @@ This project uses **Terraform** to deploy a static website to **AWS S3** as part
 1. Clone the repo:
    ```bash
    git clone https://github.com/USERNAME/devops-resume-terraform.git
-
 2. Navigate to the project directory:
    ```bash
    cd devops-resume-terraform
-
 3. Initialize Terraform:
    ```bash
    terraform init
