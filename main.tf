@@ -54,6 +54,13 @@ resource "aws_s3_bucket_policy" "example" {
   })
 }
 
+resource "local_file" "index_html" {
+  content  = templatefile("${path.module}/index.html.tpl", {
+    profile_picture_url = "https://${aws_s3_bucket.mybucket.bucket}.s3.amazonaws.com/profile.png"
+  })
+  filename = "${path.module}/index.html"
+  file_permission = "0644"
+}
 
 resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.mybucket.id
@@ -94,11 +101,4 @@ resource "aws_s3_bucket_website_configuration" "website" {
   }
 
   depends_on = [ aws_s3_bucket_acl.example ]
-}
-
-resource "local_file" "index_html" {
-  content  = templatefile("${path.module}/index.html.tpl", {
-    profile_picture_url = "https://${aws_s3_bucket.mybucket.bucket}.s3.amazonaws.com/profile.png"
-  })
-  filename = "${path.module}/index.html"
 }
