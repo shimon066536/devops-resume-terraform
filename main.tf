@@ -94,3 +94,16 @@ resource "aws_s3_bucket_website_configuration" "website" {
 
   depends_on = [ aws_s3_bucket_acl.example ]
 }
+
+data "template_file" "index_html" {
+  template = file("index.html.tpl")
+
+  vars = {
+    profile_picture_url = "https://${aws_s3_bucket.mybucket.bucket}.s3.amazonaws.com/profile.png"
+  }
+}
+
+resource "local_file" "index_html" {
+  content  = data.template_file.index_html.rendered
+  filename = "index.html"
+}
