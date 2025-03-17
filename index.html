@@ -255,16 +255,7 @@
 
   <main>
     <div class="center-image">
-      <img class="cloud-image" src="https://devops-resume-${var.name}-${random_id.bucket_suffix.hex}.s3.amazonaws.com/profile.png" alt="Shimon's Profile Picture">
-      <!-- <img class="cloud-image" src="https://myterraformprojectwebsite2023.s3.amazonaws.com/profile.png" alt="Profile Image"> -->
-      <script>
-        // קבל את הכתובת האמיתית של התמונה מהבאקט
-        const imageUrl = "https://devops-resume-${var.name}-${random_id.bucket_suffix.hex}.s3.amazonaws.com/profile.png";
-        // עדכן את תגית ה-img עם הכתובת הנכונה
-        document.getElementById("myImage").src = imageUrl;
-        // הדפס את הכתובת לקונסולה לבדיקה
-        console.log("Image URL:", imageUrl);
-    </script>
+      <img class="cloud-image" src="${profile_picture_url}" alt="Shimon's Profile Picture">
     </div>
 
     <h2>About Me</h2>
