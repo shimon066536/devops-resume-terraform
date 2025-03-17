@@ -56,13 +56,13 @@ resource "aws_s3_bucket_policy" "example" {
 
 
 resource "aws_s3_object" "index" {
-  bucket = aws_s3_bucket.mybucket.id
-  key = "index.html"
-  source = "index.html"
-  acl = "public-read"
+  bucket       = aws_s3_bucket.mybucket.id
+  key          = "index.html"
+  source       = local_file.index_html.filename
+  acl          = "public-read"
   content_type = "text/html"
 
-  source_hash = filebase64sha256("index.html")
+  source_hash  = filebase64sha256(local_file.index_html.filename)
 }
 
 resource "aws_s3_object" "error" {
