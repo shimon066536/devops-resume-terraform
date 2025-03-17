@@ -22,7 +22,9 @@ This project uses **Terraform** to deploy a static website to **AWS S3** as part
 4. Apply the configuration:
    ```bash
    terraform apply -auto-approve
-
+4. Destroy the configuration:
+   ```bash
+   terraform destroy -auto-approve
 
 # Technologies Used
 
