@@ -63,6 +63,7 @@ resource "aws_s3_object" "index" {
   content_type = "text/html"
 
   source_hash  = filebase64sha256(local_file.index_html.filename)
+  depends_on   = [local_file.index_html]
 }
 
 resource "aws_s3_object" "error" {
