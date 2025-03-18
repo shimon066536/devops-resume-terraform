@@ -26,6 +26,9 @@ jobs:
         echo "AWS_REGION=us-east-1" >> $GITHUB_ENV
 
     - name: Terraform Format
+      run: terraform fmt -recursive
+
+    - name: Terraform Format
       run: terraform fmt -check
 
     - name: Terraform Validate
