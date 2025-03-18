@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "devops-resume-${var.name}-${random_id.bucket_suffix.hex}"
+  bucket = "devops-resume-shimon-1b4c1f44"
   
   tags = {
     Name        = "DevOps Resume Bucket"
@@ -12,7 +12,7 @@ resource "random_id" "bucket_suffix" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "devops-resume-${var.name}-${random_id.bucket_suffix.hex}"
+  bucket = "devops-resume-shimon-1b4c1f44"
 
   lifecycle {
     prevent_destroy = true
