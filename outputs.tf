@@ -7,5 +7,5 @@ output "bucket_name" {
 }
 
 output "profile_picture_url" {
-  value = "https://${aws_s3_bucket.mybucket.bucket}.s3.amazonaws.com/profile.png"
+  value = "https://devops-resume-shimon-1b4c1f44.s3.amazonaws.com/profile.png"
 }
