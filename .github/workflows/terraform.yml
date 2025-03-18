@@ -25,6 +25,15 @@ jobs:
         echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
         echo "AWS_REGION=eu-central-1" >> $GITHUB_ENV
 
+    - name: Ensure S3 Bucket Exists
+      run: |
+        if ! aws s3 ls "s3://devops-resume-shimon-1b4c1f44" 2>/dev/null; then
+          echo "S3 bucket does not exist. Creating..."
+          aws s3 mb s3://devops-resume-shimon-1b4c1f44
+        else
+          echo "S3 bucket already exists."
+        fi
+
     - name: Terraform Format
       run: terraform fmt -recursive
 
