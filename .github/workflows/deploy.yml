@@ -1,0 +1,29 @@
+# .github/workflows/deploy.yml
+name: Deploy Static Website to S3
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'static-site/**'
+
+jobs:
+  deploy:
+    name: Upload static site to S3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Sync static files to S3
+        run: |
+          aws s3 sync static-site/ s3://devops-resume-shimon-1b4c1f44 --acl public-read --delete

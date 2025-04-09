@@ -1,22 +1,11 @@
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "devops-resume-shimon-1b4c1f44"
-  
+  bucket = "devops-resume-shimon-eef8c095"
+
   tags = {
     Name        = "DevOps Resume Bucket"
     Environment = "Dev"
   }
-}
-
-resource "random_id" "bucket_suffix" {
-  byte_length = 4
-}
-
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "devops-resume-shimon-1b4c1f44"
-
-  lifecycle {
-    prevent_destroy = true
-  }
+  force_destroy = true
 }
 
 resource "aws_dynamodb_table" "terraform_locks" {
@@ -71,53 +60,17 @@ resource "aws_s3_bucket_policy" "example" {
       }
     ]
   })
-}
-
-resource "local_file" "index_html" {
-  content  = templatefile("${path.module}/index.html.tpl", {
-    profile_picture_url = "https://${aws_s3_bucket.mybucket.bucket}.s3.amazonaws.com/profile.png"
-  })
-  filename = "${path.module}/index.html"
-  file_permission = "0644"
-}
-
-resource "aws_s3_object" "index" {
-  bucket       = aws_s3_bucket.mybucket.id
-  key          = "index.html"
-  source       = local_file.index_html.filename
-  acl          = "public-read"
-  content_type = "text/html"
-
-  source_hash  = filebase64sha256(local_file.index_html.filename)
-  depends_on   = [local_file.index_html]
-}
-
-resource "aws_s3_object" "error" {
-  bucket = aws_s3_bucket.mybucket.id
-  key = "error.html"
-  source = "error.html"
-  acl = "public-read"
-  content_type = "text/html"
-
-  source_hash = filebase64sha256("error.html")
-}
-
-resource "aws_s3_object" "profile" {
-  bucket = aws_s3_bucket.mybucket.id
-  key = "profile.png"
-  source = "profile.png"
-  acl = "public-read"
+  depends_on = [ aws_s3_bucket_public_access_block.example ]
 }
 
 resource "aws_s3_bucket_website_configuration" "website" {
   bucket = aws_s3_bucket.mybucket.id
+
   index_document {
     suffix = "index.html"
   }
-
   error_document {
     key = "error.html"
   }
-
   depends_on = [ aws_s3_bucket_acl.example ]
 }

@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "devops-resume-shimon-1b4c1f44"
+    bucket         = "devops-resume-shimon-eef8c095"
     key            = "terraform.tfstate"
     region         = "eu-central-1"
     encrypt        = true
