@@ -19,3 +19,78 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 
 ## 📁 Folder Structure
 
+
+. ├── Terraform_init/ # Initial backend creation (S3 + DynamoDB) ├── terraform/ # Main Terraform configurations │ ├── s3_bucket.tf │ ├── variables.tf │ └── outputs.tf ├── .github/workflows/ │ └── terraform.yml # GitHub Actions CI for auto-deploy ├── resume-site/ # HTML/CSS resume files │ └── index.html ├── .gitignore └── README.md
+
+
+
+---
+
+## 🛠️ Technologies
+
+| Tool        | Purpose                        |
+|-------------|--------------------------------|
+| Terraform   | Infrastructure as Code         |
+| AWS S3      | Static website hosting         |
+| DynamoDB    | State locking for Terraform    |
+| GitHub Actions | CI/CD workflow for deployment |
+| HTML/CSS    | Frontend for resume portfolio  |
+
+---
+
+## 🔄 CI/CD Flow
+
+Using GitHub Actions (`terraform.yml`) to:
+- Run `terraform init`, `validate`, `apply`
+- Sync HTML resume files to S3
+- Automatically deploy on push to `main`
+
+---
+
+## 🧪 How to Use
+
+```bash
+cd Terraform_init/
+terraform init
+terraform apply   # Only once to create backend
+
+cd ../terraform/
+terraform init
+terraform plan
+terraform apply
+
+
+To deploy a new version of your resume site:
+
+git add .
+git commit -m "Update resume"
+git push
+
+
+CI/CD will handle the deployment 🎉
+
+📸 Live Demo
+Check it out live:
+➡️ your-bucket-name.s3-website-<region>.amazonaws.com
+(replace with your actual URL)
+
+🧠 Credits
+Based on N4si's Terraform starter
+
+Extended by Shimon066536
+
+📌 Notes
+This project is built for learning and showcasing DevOps skills
+
+Follow best practices: use separate environments and secure credentials
+
+All infrastructure defined in Terraform, no manual AWS setup
+
+📮 Contact
+For feedback or questions, feel free to open an issue or connect on LinkedIn
+
+yaml
+Copy
+Edit
+
+---
