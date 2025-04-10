@@ -26,4 +26,4 @@ jobs:
 
       - name: Sync static files to S3
         run: |
-          aws s3 sync static-site/ s3://devops-resume-shimon-1b4c1f44 --acl public-read --delete
+          aws s3 sync static-site/ s3://devops-resume-shimon-eef8c095 --acl public-read --delete
