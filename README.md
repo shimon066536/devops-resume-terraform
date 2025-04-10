@@ -1,33 +1,21 @@
-# DevOps Resume Project 🌟
+# 🌐 DevOps Resume Terraform Project
 
-This project uses **Terraform** to deploy a static website to **AWS S3** as part of a DevOps portfolio. 
+> **Forked and enhanced from the great starter by [N4si](https://github.com/N4si/simple-terraform-project)**  
+> This version extends the original idea with modular structure, environment separation, and full CI/CD integration via GitHub Actions.
 
-## Technologies Used
-- Terraform
-- AWS S3
-- GitHub
+---
 
-## How to Deploy
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/USERNAME/devops-resume-terraform.git
-2. Navigate to the project directory:
-   ```bash
-   cd devops-resume-terraform
-3. Initialize Terraform:
-   ```bash
-   terraform init
-4. Apply the configuration:
-   ```bash
-   terraform apply -auto-approve
-4. Destroy the configuration:
-   ```bash
-   terraform destroy -auto-approve
+## 🚀 Overview
 
-# Technologies Used
+This project demonstrates real-world **Infrastructure as Code (IaC)** using **Terraform** and AWS, aimed to deploy a fully functional static website for a **DevOps Resume Portfolio**, including:
 
-### Terraform for infrastructure as code
+- 🏗️ Infrastructure setup using Terraform (S3, DynamoDB, IAM, etc.)
+- 📂 Modular & environment-ready structure
+- 📦 GitHub Actions CI/CD pipeline for auto-deploy
+- 📸 Profile image hosting on S3
+- 💼 Resume deployment with custom styling
 
-AWS S3 for static website hosting
-GitHub for version control
-Feel free to check the website live here!
+---
+
+## 📁 Folder Structure
+
