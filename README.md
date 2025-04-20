@@ -35,7 +35,7 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 ├── .gitignore<br>
 └── README.md
 
-
+```
 ## 📁 Project Structure
 
 . 
@@ -62,7 +62,7 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 yaml
 Copy
 Edit
-
+```
 ---
 
 ## 🛠️ Technologies
