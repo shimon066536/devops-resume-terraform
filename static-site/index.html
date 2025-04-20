@@ -1,306 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <title>Portfolio of Shimon Nagar</title>
-  <style>
-    /* Your CSS styles can go here */
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f2f2f2;
-    }
-
-    header {
-      background-color: #007bff;
-      position: relative;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://media.istockphoto.com/id/1345778718/photo/cloud-computing-the-data-transfer-and-storage-concept-consists-of-a-white-polygonal.webp?b=1&s=170667a&w=0&k=20&c=GnhRL-ni1TLWITFWdYUAygacWEiSOK8nS_uo8pKw9rY='); /* Replace with your cloud symbol image URL */
-      background-size: cover;
-      opacity: 0.1;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-
-    header p {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background-color: #007bff;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    /* Style the image */
-    .cloud-image {
-      width: 200px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      background-color: #6dd5ed;
-      border-radius: 50%;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Add some animations */
-    header h1 {
-      animation: fadeInDown 1s;
-    }
-
-    main {
-      animation: fadeInUp 1s;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Review Section */
-    .reviews {
-      margin-top: 2rem;
-      background-color: #f9f9f9;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow-y: scroll;
-      max-height: 400px;
-    }
-
-    .review-card {
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      background-color: #fff;
-    }
-
-    .review-card .rating {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .rating span {
-      color: #ffd700; /* Gold color for stars */
-      font-size: 1.2rem;
-      margin-right: 3px;
-    }
-
-    /* Cloud Native Projects Section */
-    .cloud-native-projects {
-      margin-top: 2rem;
-      background-color: #f9f9f9;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .project-card {
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      background-color: #fff;
-    }
-
-    /* Center the image */
-    .center-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 200px;
-      background-image: linear-gradient(to right, #ff4b5c, #ffc107);
-      border-radius: 50%;
-    }
-
-    /* Texture for Reviews and Cloud Native Projects */
-    .reviews {
-      background-image: linear-gradient(to right, #6dd5ed, #2196f3);
-    }
-
-    .cloud-native-projects {
-      background-image: linear-gradient(to right, #fdc830, #f37335);
-    }
-
-    /* Styling for headings and links */
-    h1, h2, h3 {
-      font-family: 'Lobster', cursive;
-      color: #007bff;
-    }
-
-    a {
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #ff4b5c;
-    }
-
-    /* Vibrant box animations */
-    .vibrant-box {
-      background-color: #007bff;
-      color: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      animation: fadeInUp 1s;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Testimonials animation */
-    .testimonials {
-      animation: fadeInLeft 1s;
-    }
-
-    .testimonial-card {
-      animation: fadeInUp 1s;
-      transition: transform 0.2s ease;
-    }
-
-    .testimonial-card:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes fadeInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shimon | DevOps Engineer</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
+
   <header>
-    <h1>Shimon Nagar Resume</h1>
-    <p>Portfolio of Shimon Nagar</p>
-    <div class="social-links">
-      <!-- <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a> -->
-      <a href="https://www.linkedin.com/in/shimon-nagar-9b0b90329/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/shimon066536" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
+    <h1>Shimon</h1>
+    <p>DevOps Engineer | Automation | Cloud | CI/CD | Terraform</p>
   </header>
 
-  <main>
-    <div class="center-image">
-      <img class="cloud-image" src="profile.jpg" alt="Shimon's Profile Picture">
-    </div>
+  <div class="container">
 
-    <h2>About Me</h2>
-    <p>Hi, I'm Shimon, a DevOps engineer with hands-on experience in cloud technologies and infrastructure automation. I previously worked at Surecomp, where I gained practical knowledge in CI/CD pipelines, container orchestration with Kubernetes, and cloud environments like AWS.</p>
-    <p>Currently, I'm focused on expanding my DevOps skills by building real-world projects — from deploying static websites using Terraform on AWS to configuring monitoring solutions with Prometheus and Grafana.</p>
-    <p>I'm passionate about automation, cloud computing, and continuous learning. As I grow my portfolio, I'm also exploring opportunities to offer freelance DevOps services, helping businesses optimize their cloud infrastructure.</p>
-    <p>Feel free to check out my projects and connect with me — let's build something great together!</p>
+    <section>
+      <h2>👋 About Me</h2>
+      <p>
+        DevOps engineer with hands-on experience in cloud infrastructure (AWS), CI/CD pipelines, containerization, and monitoring. I love building reliable, scalable, and automated systems.
+      </p>
+    </section>
 
-    <h2 class="testimonials">Reviews</h2>
-    <div class="reviews">
-      <div class="testimonial-card">
-        <div class="rating">
-          <span>⭐⭐⭐⭐⭐</span>
-        </div>
-        <p>"Shimon's expertise in cloud computing and DevOps is unparalleled. He provided valuable insights and solutions for our project, and we couldn't be happier with the results."</p>
-        <p>- John Doe, CEO at Example Corp</p>
-      </div>
-      <!-- Add more reviews as needed -->
-    </div>
-
-    <h2 class="cloud-native-projects">Cloud Native Projects</h2>
-    <div class="cloud-native-projects">
-      <div class="project-card">
-        <h3>Project: Kubernetes in the Cloud</h3>
-        <p>A scalable and robust Kubernetes setup in the cloud, leveraging the power of microservices architecture and Helm for deployment.</p>
-      </div>
-      <!-- Add more cloud native projects as needed -->
-    </div>
-
-    <div class="vibrant-box">
-      <h2>Contact Me</h2>
-      <p>If you have any questions, collaboration opportunities, or just want to say hello, feel free to reach out to me:</p>
+    <section>
+      <h2>🛠️ Skills</h2>
       <ul>
-        <li>Email: shimon066536@gmail.com</li>
-        <!-- For future use -->
-        <!-- <li>YouTube: <a href="https://www.youtube.com/shimon-nagar" target="_blank">YouTube Channel</a></li> -->
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/shimon-devops-growth/" target="_blank">Shimon Nagar's LinkedIn Profile</a></li>
-        <li>GitHub: <a href="https://github.com/shimon066536" target="_blank">Your GitHub Profile</a></li>
+        <li>Terraform, AWS (EC2, S3, VPC, IAM, EKS)</li>
+        <li>GitHub Actions, Jenkins, Docker, Kubernetes</li>
+        <li>Monitoring: Prometheus, Grafana</li>
+        <li>Linux, Bash, Python basics</li>
       </ul>
-    </div>
-  </main>
+    </section>
+
+    <section>
+      <h2>📂 Projects</h2>
+      <div class="project">
+        <strong>DevOps Resume Terraform</strong><br />
+        Infrastructure-as-Code project with modular Terraform + CI/CD GitHub Actions<br />
+        <a href="https://github.com/shimon066536/devops-resume-terraform" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <strong>Monitoring with Prometheus + Grafana</strong><br />
+        Set up a full monitoring stack with exporters, dashboards, and alerts<br />
+        <a href="#" target="_blank">Coming soon</a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>📬 Contact</h2>
+      <p>
+        Email: <a href="mailto:you@example.com">you@example.com</a><br />
+        LinkedIn: <a href="#" target="_blank">Your LinkedIn</a><br />
+        GitHub: <a href="https://github.com/shimon066536" target="_blank">shimon066536</a>
+      </p>
+    </section>
+
+  </div>
 
   <footer>
-    <p>&copy; Shimon Nagar | All rights reserved.</p>
+    &copy; 2025 Shimon. All rights reserved.
   </footer>
-</body>
 
+</body>
 </html>
