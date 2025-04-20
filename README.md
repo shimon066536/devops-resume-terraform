@@ -22,27 +22,17 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 
 .
 
-├── Terraform_init/        # Initial backend creation (S3 + DynamoDB)
-
-├── terraform/             # Main Terraform configurations
-
-│   ├── s3_bucket.tf
-
+├── Terraform_init/        # Initial backend creation (S3 + DynamoDB)<br>
+├── terraform/             # Main Terraform configurations<br>
+│   ├── s3_bucket.tf<br>
 │   ├── variables.tf<br>
-│   └── outputs.tf
-
-├── .github/
-
-│   └── workflows/
-
-│       └── terraform.yml  # GitHub Actions CI for auto-deploy
-
-├── resume-site/           # HTML/CSS resume files
-
-│   └── index.html
-
-├── .gitignore
-
+│   └── outputs.tf<br>
+├── .github/<br>
+│   └── workflows/<br>
+│       └── terraform.yml  # GitHub Actions CI for auto-deploy<br>
+├── resume-site/           # HTML/CSS resume files<br>
+│   └── index.html<br>
+├── .gitignore<br>
 └── README.md
 
 
