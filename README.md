@@ -17,12 +17,49 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 
 ---
 
-## 📁 Folder Structure
 
+📁 Project Structure
 
-. ├── Terraform_init/ # Initial backend creation (S3 + DynamoDB) ├── terraform/ # Main Terraform configurations │ ├── s3_bucket.tf │ ├── variables.tf │ └── outputs.tf ├── .github/workflows/ │ └── terraform.yml # GitHub Actions CI for auto-deploy ├── resume-site/ # HTML/CSS resume files │ └── index.html ├── .gitignore └── README.md
+.
+├── Terraform_init/        # Initial backend creation (S3 + DynamoDB)
+├── terraform/             # Main Terraform configurations
+│   ├── s3_bucket.tf
+│   ├── variables.tf
+│   └── outputs.tf
+├── .github/
+│   └── workflows/
+│       └── terraform.yml  # GitHub Actions CI for auto-deploy
+├── resume-site/           # HTML/CSS resume files
+│   └── index.html
+├── .gitignore
+└── README.md
 
+## 📁 Project Structure
 
+. 
+├── Terraform_init/    # Initial backend creation (S3 + DynamoDB)
+│   ├── variables.tf 
+│   └── outputs.tf
+├── terraform/         # Main Terraform configurations 
+│   ├── s3_bucket.tf 
+│   └── variables.tf 
+├── .github/ 
+│   └── workflows/ 
+│   └── terraform.yml  # GitHub Actions CI for auto-deploy 
+├── resume-site/       # HTML/CSS resume files 
+│   ├── css/ 
+│   │   └── style.css 
+│   ├── images/ 
+│   │   └── profile.jpg 
+│   ├── index.html     # Main resume version 
+│   ├── index_v2.html  # Alternate/responsive version 
+│   └── error.html     # Custom 404 page
+├── .gitignore 
+└── README.md
+
+yaml
+Copy
+Edit
 
 ---
 
