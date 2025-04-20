@@ -21,18 +21,30 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 📁 Project Structure
 
 .
+
 ├── Terraform_init/        # Initial backend creation (S3 + DynamoDB)
+
 ├── terraform/             # Main Terraform configurations
+
 │   ├── s3_bucket.tf
-│   ├── variables.tf
+
+│   ├── variables.tf<br>
 │   └── outputs.tf
+
 ├── .github/
+
 │   └── workflows/
+
 │       └── terraform.yml  # GitHub Actions CI for auto-deploy
+
 ├── resume-site/           # HTML/CSS resume files
+
 │   └── index.html
+
 ├── .gitignore
+
 └── README.md
+
 
 ## 📁 Project Structure
 
