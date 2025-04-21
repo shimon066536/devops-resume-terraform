@@ -6,7 +6,9 @@ on:
     branches:
       - main
     paths:
-      - 'static-site/**'
+      - 'static-site/Shimon-Nagar_CV.pdf'
+      - 'static-site/index.html'
+      - 'static-site/error.html'
 
 jobs:
   deploy:
