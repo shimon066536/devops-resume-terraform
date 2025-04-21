@@ -30,4 +30,4 @@ jobs:
 
       - name: Sync static files to S3
         run: |
-          aws s3 sync static-site/Shimon-Nagar_CV.pdf static-site/error.html static-site/error.html css images s3://devops-resume-shimon-eef8c095 --acl public-read --delete
+          aws s3 sync static-site/ s3://devops-resume-shimon-eef8c095 --acl public-read --delete
