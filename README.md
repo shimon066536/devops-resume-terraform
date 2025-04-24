@@ -175,5 +175,3 @@ This makes it clear that your work builds on the original starter while showcasi
 > 🔧 _Optional:_ You can also create a GitHub Actions workflow (e.g. `.github/workflows/contact-backend.yml`) to build your Docker image and deploy the Flask service to your preferred host (ECS, Heroku, etc.).
 
 ---
-
-With these sections in place you’ll have a fully-English, professional README that covers Pages, HTTPS/CloudFront, credit, and your new backend branch. Let me know if you’d like any further tweaks!
