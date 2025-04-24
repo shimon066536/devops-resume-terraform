@@ -9,6 +9,20 @@
 
 ---
 
+## 🚀 Overview
+
+This project demonstrates real-world **Infrastructure as Code (IaC)** using **Terraform** and AWS, aimed to deploy a fully functional static website for a **DevOps Resume Portfolio**, including:
+
+- 🏗️ Infrastructure setup using Terraform (S3, DynamoDB, IAM, etc.)
+- 📂 Modular & environment-ready structure
+- 📦 GitHub Actions CI/CD pipeline for auto-deploy
+- 📸 Profile image hosting on S3
+- 💼 Resume deployment with custom styling
+
+---
+
+---
+
 ## 🔗 Live Demos
 
 - **Static Site (CloudFront, HTTPS):**  
@@ -107,3 +121,59 @@ For feedback or questions, feel free to open an issue or connect on LinkedIn
 
 
 ---
+
+Here are the remaining sections translated into polished English for your `README.md`:
+
+---
+
+## 3. HTTPS via AWS CloudFront
+
+- **CloudFront Distribution**  
+  You already have a CloudFront distribution pointing at your S3 bucket as its origin.
+
+- **Custom Domain Setup**  
+  1. In **Route 53**, create either an A-alias or CNAME record from your custom domain (e.g. `resume.yoursite.com`) to your CloudFront distribution’s domain name.  
+  2. In the CloudFront console, under **General → Alternate Domain Names (CNAMEs)**, add your custom domain.  
+  3. In **AWS Certificate Manager** (in us-east-1), request or import a TLS certificate covering your domain and attach it to the distribution under **Custom SSL Certificate**.
+
+- As soon as DNS propagates, your site will be available securely at your custom URL.
+
+---
+
+## 4. Attribution to the Original Project
+
+At the very top of your README include:
+
+> **Forked and extended from** [N4si/simple-terraform-project](https://github.com/N4si/simple-terraform-project)  
+
+This makes it clear that your work builds on the original starter while showcasing your own enhancements.
+
+---
+
+## 5. Adding a Separate Branch for Your Flask + MongoDB Contact Form
+
+1. **Create a new branch** off `main`:
+   ```bash
+   git fetch
+   git checkout -b contact-form main
+   ```
+2. **Add your backend code** under a new folder, e.g. `flask-backend/`:
+   ```
+   flask-backend/
+   ├── app.py             # Flask application
+   ├── requirements.txt   # Python dependencies
+   └── Dockerfile         # Container setup (optional)
+   ```
+3. **Commit and push** that branch:
+   ```bash
+   git add flask-backend
+   git commit -m "Add contact-form backend (Flask + MongoDB)"
+   git push -u origin contact-form
+   ```
+4. **Open a Pull Request** on GitHub from `contact-form` into `main` when you’re ready to merge.  
+
+> 🔧 _Optional:_ You can also create a GitHub Actions workflow (e.g. `.github/workflows/contact-backend.yml`) to build your Docker image and deploy the Flask service to your preferred host (ECS, Heroku, etc.).
+
+---
+
+With these sections in place you’ll have a fully-English, professional README that covers Pages, HTTPS/CloudFront, credit, and your new backend branch. Let me know if you’d like any further tweaks!
