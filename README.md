@@ -20,7 +20,6 @@
 
 ## 📁 Project Structure
 
-> *Use a fenced code block so the tree renders exactly as shown.*
 
 ```text
 /
@@ -41,7 +40,8 @@
 │   └── index.html
 ├── README.md
 └── .gitignore
-```
+```text
+/
 
 
 
