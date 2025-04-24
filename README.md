@@ -122,7 +122,6 @@ For feedback or questions, feel free to open an issue or connect on LinkedIn
 
 ---
 
-Here are the remaining sections translated into polished English for your `README.md`:
 
 ---
 
@@ -140,23 +139,9 @@ Here are the remaining sections translated into polished English for your `READM
 
 ---
 
-## 4. Attribution to the Original Project
-
-At the very top of your README include:
-
-> **Forked and extended from** [N4si/simple-terraform-project](https://github.com/N4si/simple-terraform-project)  
-
-This makes it clear that your work builds on the original starter while showcasing your own enhancements.
 
 ---
 
-## 5. Adding a Separate Branch for Your Flask + MongoDB Contact Form
-
-1. **Create a new branch** off `main`:
-   ```bash
-   git fetch
-   git checkout -b contact-form main
-   ```
 2. **Add your backend code** under a new folder, e.g. `flask-backend/`:
    ```
    flask-backend/
