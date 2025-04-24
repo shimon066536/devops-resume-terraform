@@ -1,80 +1,94 @@
-# DevOps Resume Terraform & Static Site
+# 🚀 DevOps Resume Terraform & Static Site
 
 > **Forked and extended from** [N4si/simple-terraform-project](https://github.com/N4si/simple-terraform-project)  
-> **Enhancements:**  
-> - מודולריזציה מלאה בתיקייה `terraform/`  
-> - Terraform _init לפרונט־אנד ותשתית (S3 + DynamoDB) בתיקייה `terraform_init/`  
-> - CI/CD עם GitHub Actions (`.github/workflows/deploy.yml`)  
-> - תאימות HTTPS דרך CloudFront  
-> - **New!** Contact form backend עם Flask + MongoDB (סעיף נפרד בבראנץ’ `contact-form`)
+> **Key Enhancements:**  
+> - Full modular Terraform (see `terraform/` and `terraform_init/`)  
+> - CI/CD via GitHub Actions (`.github/workflows/deploy.yml`)  
+> - HTTPS delivery with AWS CloudFront  
+> - **New!** Contact form backend (Flask + MongoDB) in a separate branch
 
 ---
 
-## 📺 Live Demos
+## 🔗 Live Demos
 
-- **Static Site on CloudFront (HTTPS):**  
+- **Static Site (CloudFront, HTTPS):**  
   https://d1whbbab1ytdwh.cloudfront.net/  
-- **GitHub Pages (חלופה):**  
+- **GitHub Pages (fallback):**  
   https://shimon066536.github.io/devops-resume-terraform/
 
 ---
 
-## 📁 Structure
+## 📁 Project Structure
 
-'''
-/ ├── terraform_init/ # init backend (S3 + DynamoDB) ├── terraform/ # main IaC modules ├── static-site/ # האתר הסטטי שלך (HTML, CSS, JS, assets) │ └── …
-├── flask-backend/ # בראנצ’ contact-form בלבד: Flask + MongoDB
-│ └── app.py, requirements.txt, Dockerfile ├── .github/workflows/
-│ └── deploy.yml # CI/CD ל־static site ├── docs/ # לתצוגה ב-GitHub Pages
-│ └── index.html, css/, images/ ├── README.md └── .gitignore
-'''
+> *Use a fenced code block so the tree renders exactly as shown.*
 
----
+```text
+/
+├── terraform_init/        # Initial backend setup (S3 + DynamoDB)
+├── terraform/             # Main IaC modules (bucket, IAM, etc.)
+├── static-site/           # Front-end: HTML, CSS, JS, assets
+│   ├── css/
+│   ├── images/
+│   └── index.html
+├── flask-backend/         # (branch: contact-form) Flask + MongoDB API
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── .github/
+│   └── workflows/
+│       └── deploy.yml     # CI/CD for S3 sync
+├── docs/                  # GitHub Pages source (`/docs` → Pages)
+│   └── index.html
+├── README.md
+└── .gitignore
 
-## 2. GitHub Pages: שני נתיבים
 
-1. **docs/ folder on `main`**  
-   - העתק את התיקייה `static-site/` אל `docs/` עם קובץ `index.html` בראש (`docs/index.html`).  
-   - ב־Settings → Pages בחר:
-     - Source: **main branch** → **/docs folder**  
-   - GitHub יפרסם את האתר ב־`https://<username>.github.io/devops-resume-terraform/`.
 
-2. **gh-pages branch**  
-   - צרו בראנצ’ חדש `gh-pages` עם התוכן הסטטי (build artifacts).  
-     ```bash
-     git checkout main
-     git subtree split --prefix static-site -b gh-pages
-     git push -u origin gh-pages
-     ```
-   - ב־Settings → Pages → Source: **gh-pages branch**.
 
-> אם אתה משתמש ב-CloudFront + S3 כדי לפרסם, אין לך צורך אמיתי ב-Pages — אבל Pages נח למקרה חינמי ולפיתוח מהיר.
 
----
+🛠️ Technologies & Tools
 
-## 3. HTTPS ו-CloudFront
+Category | Technologies
+Infrastructure | Terraform, AWS S3, DynamoDB (state lock)
+CI/CD | GitHub Actions
+Front-End | HTML5, CSS3 (or Tailwind CSS)
+Back-End | Python Flask, MongoDB
+Delivery | AWS CloudFront, (optionally GitHub Pages)
 
-- כבר הגדרת Distribution עם Origin = S3 bucket של האתר הסטטי.  
-- **דומיין מותאם אישית**:  
-  - בקונסול Route53 הפנה CNAME (או A-alias) ל-CloudFront distribution.  
-  - ב־CF תחת **Alternate domain names (CNAMEs)** הוסף את השם (לדוגמה `resume.yoursite.com`).  
-  - CF ינפיק לך תעודת TLS אוטומטית ב־“Custom SSL Certificate” (via ACM).
 
----
 
-## 4. מתן קרדיט לפרויקט המקורי
 
-ב־README, בראש, כתוב:
 
-> **Forked and extended from** [N4si/simple-terraform-project](https://github.com/N4si/simple-terraform-project)
+⚡ Quick Start
+1. Bootstrap your backend (one-time):
 
-כך ברור שזה הבסיס, ואתה ציין את התרומה שלך אחר כך.
+cd terraform_init/
+terraform init
+terraform apply
 
----
 
-## 5. הוספת בראנצ’ נפרד ל־Flask + MongoDB
 
-1. **צור את בראנצ’**  
-   ```bash
-   git fetch
-   git checkout -b contact-form main
+
+
+
+
+2. Deploy core infra:
+
+cd ../terraform/
+terraform init
+terraform plan
+terraform apply
+
+
+
+
+
+
+3. Push static site:
+
+- On any change to static-site/, your GitHub Actions workflow will auto-sync to S3.
+
+
+
+
+
