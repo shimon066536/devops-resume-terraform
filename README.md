@@ -43,18 +43,31 @@
 ```
 
 
+---
 
+## 🛠️ Technologies & Tools
 
+| Tool        | Purpose                        |
+|-------------|--------------------------------|
+| Terraform   | Infrastructure as Code         |
+| AWS S3      | Static website hosting         |
+| DynamoDB    | State locking for Terraform    |
+| GitHub Actions | CI/CD workflow for deployment |
+| HTML/CSS    | Frontend for resume portfolio  |
 
+---
+
+---
 🛠️ Technologies & Tools
 
-Category | Technologies
-Infrastructure | Terraform, AWS S3, DynamoDB (state lock)
-CI/CD | GitHub Actions
-Front-End | HTML5, CSS3 (or Tailwind CSS)
-Back-End | Python Flask, MongoDB
-Delivery | AWS CloudFront, (optionally GitHub Pages)
-
+|   Category    |            Technologies                |
+|---------------|----------------------------------------|
+| Infrastructure| Terraform, AWS S3, DynamoDB (state lock)
+|    CI/CD      | GitHub Actions                         |
+|  Front-End    | HTML5, CSS3 (or Tailwind CSS)          |
+|   Back-End    | Python Flask, MongoDB                  |
+|   Delivery    | AWS CloudFront, (optionally GitHub Pages)
+---
 
 
 
