@@ -59,9 +59,6 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 ├── .gitignore 
 └── README.md
 
-yaml
-Copy
-Edit
 ```
 ---
 
@@ -127,9 +124,5 @@ All infrastructure defined in Terraform, no manual AWS setup
 
 📮 Contact
 For feedback or questions, feel free to open an issue or connect on LinkedIn
-
-yaml
-Copy
-Edit
 
 ---
