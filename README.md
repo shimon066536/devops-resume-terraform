@@ -97,6 +97,7 @@ git push
 CI/CD will handle the deployment 🎉
 
 Check it out live:
+
 ➡️ your-bucket-name.s3-website-<region>.amazonaws.com
 (replace with your actual URL)
 
