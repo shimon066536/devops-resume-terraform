@@ -92,16 +92,15 @@ To deploy a new version of your resume site:
 git add .
 git commit -m "Update resume"
 git push
-
+```
 
 CI/CD will handle the deployment 🎉
 
-📸 Live Demo
 Check it out live:
 ➡️ your-bucket-name.s3-website-<region>.amazonaws.com
 (replace with your actual URL)
 
-🧠 Credits
+###🧠 Credits
 Based on N4si's Terraform starter
 
 Extended by Shimon066536
