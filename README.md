@@ -100,10 +100,6 @@ Check it out live:
 ➡️ your-bucket-name.s3-website-<region>.amazonaws.com
 (replace with your actual URL)
 
-###🧠 Credits
-Based on N4si's Terraform starter
-
-Extended by Shimon066536
 
 📌 Notes
 This project is built for learning and showcasing DevOps skills
