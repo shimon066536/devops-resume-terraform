@@ -49,8 +49,6 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml     # CI/CD for S3 sync
-├── docs/                  # GitHub Pages source (`/docs` → Pages)
-│   └── index.html
 ├── README.md
 └── .gitignore
 ```
