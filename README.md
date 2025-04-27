@@ -27,8 +27,7 @@ This project demonstrates real-world **Infrastructure as Code (IaC)** using **Te
 
 - **Static Site (CloudFront, HTTPS):**  
   https://d1whbbab1ytdwh.cloudfront.net/  
-- **GitHub Pages (fallback):**  
-  https://shimon066536.github.io/devops-resume-terraform/
+
 
 ---
 
